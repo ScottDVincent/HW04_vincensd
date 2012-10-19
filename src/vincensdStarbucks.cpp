@@ -72,7 +72,7 @@ using namespace std;
 	 */
 	Entry* vincensdStarbucks::getNearest(double x, double y) {
 		/** 	*/
-		for (int i = 0; i < the_list.size(); i++)	// iterate thru vector
+		for (int i = 0; i < the_list.size(); i=i+3)	// iterate thru vector
 		cout << the_list.at(i) << '\n';				// write vector contents
 
 		// set distance of first point
@@ -82,6 +82,7 @@ using namespace std;
 		for (int i = 1; i <= the_list.back; i++) {
 		
 		//Have to convert string into double
+			//http://www.cplusplus.com/forum/articles/9645/
 			// double nX = the_list.at(i+1)
 			// double nY = the_list.at(i+2)
 

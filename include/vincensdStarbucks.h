@@ -19,6 +19,8 @@
 #include <math.h>
 
 
+std::stringstream;
+
  
  class vincensdStarbucks : public Starbucks{
 public:
