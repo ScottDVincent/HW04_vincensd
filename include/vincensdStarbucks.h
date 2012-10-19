@@ -16,6 +16,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <math.h>
 
 
  
@@ -34,7 +35,7 @@ public:
 	/** 
 	Member vars
 	*/
-
+	vector<string> the_list;
 	
 
 	/*
