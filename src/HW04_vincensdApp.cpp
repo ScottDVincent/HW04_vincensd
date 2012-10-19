@@ -71,20 +71,19 @@ void HW04_vincensdApp::setup()
 		// open file
 		   ifstream infile("..Resources/Starbucks_2006.csv");	// pg589 create an an input stream
 		       string line = "";
-		       vector<Entry> the_list;	
-			   string empty = "";	    				
+		       vector<Entry> the_list;		    				
 			  
 			   while ( !infile.eof() ) {
 		     
 			     stringstream strstr(line);    			// create a strstr of stringstream type for manipulation
-
-				 strstr.getLine(strstr, empty, ",");
+				 string word ="";
+				 strstr.getLine(strstr, word, ",") >> e.identifier;
 				 strstr.get();
-				 double d;
-				 strstr >> d;
+				 strstr >> e.x;
+				 //double d;
+				 //strstr >> d;
 				 strstr.get();
-				 double d2;
-				 strstr >> d2;
+				 strstr >> e. y;
 
 			   the_list.push_back(e);			// split the string and add pieces onto back of vector
 		   	}
