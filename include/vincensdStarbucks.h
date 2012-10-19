@@ -18,8 +18,9 @@
 #include <vector>
 #include <math.h>
 
-
+using namespace std;
 std::stringstream;
+
 
  
  class vincensdStarbucks : public Starbucks{
@@ -30,14 +31,15 @@ public:
 	*/
 	// no arguemnt constructor
 	vincensdStarbucks();
+	Entry();
 	
 	// stuff constructor 
-	vincensdStarbucks::vincensdStarbucks( /** what do I want */);
+	//vincensdStarbucks::vincensdStarbucks( /** what do I want */);
 
 	/** 
 	Member vars
 	*/
-	vector<string> the_list;
+	vector<Entry> the_list;
 	
 
 	/*

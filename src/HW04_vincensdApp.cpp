@@ -32,7 +32,7 @@ class HW04_vincensdApp : public AppBasic {
   public:
 	void setup();
 	void mouseDown( MouseEvent event );	
-	void keyDown( KeyEvent event );
+	//void keyDown( KeyEvent event );
 	void update();
 	void draw();
 	void prepareSettings(Settings* settings);
@@ -55,29 +55,71 @@ void HW04_vincensdApp::prepareSettings(Settings* settings){
 void HW04_vincensdApp::setup()
 {
 
-
 		/**
-		CONSTRUCT object
+		Read .csv file into a vector 
 		*/
 	
-			/** Read in .csv file
-			// Call  build(Entry* c, int n); //
-	
-			*/
-			build("Starbucks_2006.csv", 7544); 
+		Entry e;
+
+		//do error checking
+		//
+		ifstream fp ("..Resources/Starbucks_2006.csv");			// pg589 create an an input stream
+			if (fp.fail()){ 
+				printf("Error opening file %s\n", "Starbucks_2006.csv"); 
+			}
+		/**	 */
+		// open file
+		   ifstream infile("..Resources/Starbucks_2006.csv");	// pg589 create an an input stream
+		       string line = "";
+		       vector<Entry> the_list;	
+			   string empty = "";	    				
+			  
+			   while ( !infile.eof() ) {
+		     
+			     stringstream strstr(line);    			// create a strstr of stringstream type for manipulation
+
+				 strstr.getLine(strstr, empty, ",");
+				 strstr.get();
+				 double d;
+				 strstr >> d;
+				 strstr.get();
+				 double d2;
+				 strstr >> d2;
+
+			   the_list.push_back(e);			// split the string and add pieces onto back of vector
+		   	}
+		  }
+		 
+			
+			
+
+
+		// transform vector into array
+			
+		// call build to create data structure
+
+
 
 		/**
 		Test Some Data to output our results
 		// input something // cin >>
 		Entry* getNearest(double x, double y) {
 
+		for (int i = 0; i < the_list.size(); i=i+3)	// iterate thru vector
+		cout << the_list.at(i) << '\t';				// write vector contents
+		cout << the_list.at(i+1) << '\t';
+		cout << the_list.at(i+2) << '\t';
+		cout << '\n';
+		}
+ */
+		
 
-		//get output, dereference addy to get value
+		/** get output, dereference addy to get value
 		cout << *Entry;
 		std::cin.get();
+*/
 
-
-		*/
+		
 
 
 		/**

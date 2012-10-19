@@ -1,0 +1,18 @@
+	// array help
+	http://www.oopweb.com/Java/Documents/ThinkCSJav/Volume/chap11.htm
+	
+	//// file loop
+	
+	// open file
+		   ifstream infile("..Resources/Starbucks_2006.csv");	// pg589 create an an input stream
+		       string line = "";
+		       vector<Entry> the_list;		    				// instantiate vector
+
+		       while (getline(infile, line)){					// basically while file has a line of data
+			           stringstream strstr(line);    			// create a strstr of stringstream type for manipulatio
+
+			           string word = "";						// 
+			           while (getline(strstr,word, ','))		// While  we have a line, with no spaces, delimiter is ','
+						   the_list.push_back(e);			// split the string and add pieces onto back of vector
+		   		   }
+		  }

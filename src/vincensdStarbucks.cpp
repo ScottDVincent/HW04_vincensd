@@ -16,7 +16,7 @@
  
 #include "vincensdStarbucks.h"
 
-using namespace std;
+
 
 	/** 
 	*Default vincensdStarbucks constructor
@@ -24,11 +24,13 @@ using namespace std;
 	vincensdStarbucks::vincensdStarbucks(){
 	}
 
-		/** 
+	/** 
 	*vincensdStarbucks constructor
-	*/  
-	vincensdStarbucks::vincensdStarbucks( /** what do I want */){
-	}
+	do I really need a constructir with parameters?
+	 */ 
+	//vincensdStarbucks::vincensdStarbucks( /** what do I want in here?  */){}
+	
+
 
 
 	/*
@@ -43,35 +45,20 @@ using namespace std;
 	 */
 	void vincensdStarbucks::build(Entry* c, int n){
 		
-		Entry* newEntry = c;
-				
 
-		//do error checking
-		//
-		ifstream fp ("..Resources/Starbucks_2006.csv");		// pg589 create an an input stream
-			if (fp.fail()){ 
-				printf("Error opening file %s\n", "Starbucks_2006.csv"); 
-			return 0; 
-
-		// open file
-		   ifstream infile("..Resources/Starbucks_2006.csv");	// pg589 create an an input stream
-		       string line = "";
-		       vector<string> the_list;		    	// instantiate vector
-		       while (getline(infile, line)){			// basically while file has a line of data
-			           stringstream strstr(line);		// create a strstr of stringstream type for manipulation
-			           string word = "";				// 
-			           while (getline(strstr,word, ','))// While  we have a line, with no spaces, delimiter is ','
-						   the_list.push_back(word);	// split the string and add pieces onto back of vector
-		   		   }
-		  }
 	}
 	
 	/*
 	 * Return a pointer to the entry that is closest to the given coordinates. Your
 	 *  answer may be approximate, but then you will lose points on the "Accuracy" quality measure
-	 */
+/**	 */
+
+	
 	Entry* vincensdStarbucks::getNearest(double x, double y) {
-		/** 	*/
+		
+		Entry* e;
+		
+		/**	
 		for (int i = 0; i < the_list.size(); i=i+3)	// iterate thru vector
 		cout << the_list.at(i) << '\n';				// write vector contents
 
@@ -98,5 +85,9 @@ using namespace std;
 		return distanceSmallest* ;
 
 	
+	*/
 		
+		return e ;
 	}
+
+	

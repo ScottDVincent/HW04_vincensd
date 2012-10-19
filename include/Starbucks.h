@@ -7,9 +7,10 @@
  *            create a <uniqueid>Starbucks class, in the files <uniqueid>Starbucks.h and 
  *            <uniqueid>Starbucks.cpp
  *            Declare your class (in your <uniqueid>Starbucks.h) like this:
- *  class brinkmwjStarbucks : public Starbucks {
- *    // declaration of member variables and methods here
- *  };
+ *				class brinkmwjStarbucks : public Starbucks {
+ *				// declaration of member variables and methods here
+ *				};
+ *
  *            In your class you should declare all of your methods to be virtual: This is how
  *            polymorphism is accomplished in C++. Do NOT copy the part that says "= 0" that I use
  *            below. That part means that the function, though declared, will not have any implementation.
