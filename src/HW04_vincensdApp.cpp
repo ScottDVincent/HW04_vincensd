@@ -2,8 +2,10 @@
  * File: Hw04_vincensdApp.cpp	
  * Author   : vincensd
  * Date     : 2012-10-10
- * Sources  : 
  * Purpose  :  
+ * Sources  : 
+ http://www.dreamincode.net/forums/topic/95826-stringstream-tutorial/
+ http://www.cs.cmu.edu/~awm/animations/kdtree/
  */
 
 
@@ -18,8 +20,11 @@
 #include "cinder/ImageIo.h"
 #include "cinder/app/KeyEvent.h"
 #include "cinder/Text.h"
+
 //my includes
 #include "vincensdStarbucks.h"
+#include <iostream>
+#include <string>
 
 using namespace ci;
 using namespace ci::app;
@@ -56,43 +61,68 @@ void HW04_vincensdApp::setup()
 {
 
 	/** setup vars */
-		Entry e;
-		vector<Entry> entryVec;
-		
+	Entry* e;
+	vector<Entry> entryVec;
 		
 	/** Read .csv file into a vector */
 
-		//do error checking
-		ifstream fp ("..Resources/Starbucks_2006.csv");			// pg589 create an an input stream
-			if (fp.fail()){ 
-				printf("Error opening file %s\n", "Starbucks_2006.csv"); 
-			}
-		/**	 */
-		// open file
-		   ifstream infile("..Resources/Starbucks_2006.csv");	// pg589 create an an input stream
-		       string line = "";
-		       //vector<Entry> entryVec;		    				
-			
-			   while ( !infile.eof() ) {
+		//Open file
+	ifstream infile ("..\resources\Starbucks_2006.csv");			// pg589 create an an input stream
+	if (infile.fail()){ 
+		printf("Error opening file %s\n", "Starbucks_2006.csv"); 
+	}
+
+	string line;
+	
+	char next[256];
+
+	//Fill the vector with entry data
+	while ( !infile.eof() ) {
 		     
+		Entry* e = new Entry();
+/**
+		infile.getline(next, 256, ',');
+		string s(next);
+		e->identifier = s;
+
+		infile.getline(next, 256, ',');
+		e->x = 0.0;//next; //parse next as double
+
+		infile.getline(next, 256, '\n');
+		e->y = 0.0;//next; //parse next as a double
+
+		entryVec.push_back(*e);
+	}
+}
+*/
+
+	//Now Read out of vector into array
+
+
+				
 			     stringstream strstr(line);    	// create a strstr of stringstream type for manipulation
-				 string word ="";
-				 strstr.getLine(strstr, word, ",") >> e.identifier;
+				// char word[256];// = new char[256];
+
+				 getline(infile, line, ',') >> e.identifier;
+				//stringstream strstr(line);
+				// strstr.getline(strstr, word, ',') >> e.identifier;
 				 strstr.get();
 				 strstr >> e.x;
 				 //double d;
 				 //strstr >> d;
 				 strstr.get();
-				 strstr >> e. y;
-
-			   entryVec.push_back(e);			// split the string and add pieces onto back of vector
-		   	}
-		  }
+				 strstr >> e.y;
+				 
+	}
+			   			// split the string and add pieces onto back of vector
 		  
 			
-/**
-		Test Some Data to output our results
+
+		//Test Some Data to output our results
 		// input something // cin >>
+
+/**
+
 		Entry* getNearest(double x, double y) {
 
 		for (int i = 0; i < the_list.size(); i=i+3)	// iterate thru vector
@@ -102,26 +132,27 @@ void HW04_vincensdApp::setup()
 		cout << '\n';
 		}
 */	
+				
 
-
+/**
 		// transform vector into array
 		
 		Entry entryArr[ entryVec.size() ]; 
 
 		for (int i = 0; i < entryVec.size(); i++ ){
-			entryArr[i] = entryVec<i>;
+			entryArr[i] = entryVec.at(i);
 
 		}
 
 
-		// randomeize entryArr 
+		// randomize entryArr 
 	
 
 		// call build to create data structure
  
-		
+		vincensdStarbucks.build(&entryArr, entryVec.size() );
 
-		
+	*/	
 
 
 		/**
@@ -129,7 +160,7 @@ void HW04_vincensdApp::setup()
 		*/
 
 
-}
+//}
 
 void HW04_vincensdApp::mouseDown( MouseEvent event )
 {
