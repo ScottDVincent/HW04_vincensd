@@ -55,14 +55,14 @@ void HW04_vincensdApp::prepareSettings(Settings* settings){
 void HW04_vincensdApp::setup()
 {
 
-		/**
-		Read .csv file into a vector 
-		*/
-	
+	/** setup vars */
 		Entry e;
+		vector<Entry> entryVec;
+		
+		
+	/** Read .csv file into a vector */
 
 		//do error checking
-		//
 		ifstream fp ("..Resources/Starbucks_2006.csv");			// pg589 create an an input stream
 			if (fp.fail()){ 
 				printf("Error opening file %s\n", "Starbucks_2006.csv"); 
@@ -71,11 +71,11 @@ void HW04_vincensdApp::setup()
 		// open file
 		   ifstream infile("..Resources/Starbucks_2006.csv");	// pg589 create an an input stream
 		       string line = "";
-		       vector<Entry> the_list;		    				
-			  
+		       //vector<Entry> entryVec;		    				
+			
 			   while ( !infile.eof() ) {
 		     
-			     stringstream strstr(line);    			// create a strstr of stringstream type for manipulation
+			     stringstream strstr(line);    	// create a strstr of stringstream type for manipulation
 				 string word ="";
 				 strstr.getLine(strstr, word, ",") >> e.identifier;
 				 strstr.get();
@@ -85,21 +85,12 @@ void HW04_vincensdApp::setup()
 				 strstr.get();
 				 strstr >> e. y;
 
-			   the_list.push_back(e);			// split the string and add pieces onto back of vector
+			   entryVec.push_back(e);			// split the string and add pieces onto back of vector
 		   	}
 		  }
-		 
+		  
 			
-			
-
-
-		// transform vector into array
-			
-		// call build to create data structure
-
-
-
-		/**
+/**
 		Test Some Data to output our results
 		// input something // cin >>
 		Entry* getNearest(double x, double y) {
@@ -110,13 +101,25 @@ void HW04_vincensdApp::setup()
 		cout << the_list.at(i+2) << '\t';
 		cout << '\n';
 		}
- */
-		
+*/	
 
-		/** get output, dereference addy to get value
-		cout << *Entry;
-		std::cin.get();
-*/
+
+		// transform vector into array
+		
+		Entry entryArr[ entryVec.size() ]; 
+
+		for (int i = 0; i < entryVec.size(); i++ ){
+			entryArr[i] = entryVec<i>;
+
+		}
+
+
+		// randomeize entryArr 
+	
+
+		// call build to create data structure
+ 
+		
 
 		
 

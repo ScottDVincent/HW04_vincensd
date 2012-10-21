@@ -32,6 +32,9 @@
     <ClInclude Include="..\include\vincensdStarbucks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc">

@@ -31,7 +31,7 @@ public:
 	*/
 	// no arguemnt constructor
 	vincensdStarbucks();
-	Entry();
+	//Entry();
 	
 	// stuff constructor 
 	//vincensdStarbucks::vincensdStarbucks( /** what do I want */);
@@ -39,7 +39,7 @@ public:
 	/** 
 	Member vars
 	*/
-	vector<Entry> the_list;
+	vector<Entry> entryVec;
 	
 
 	/*
