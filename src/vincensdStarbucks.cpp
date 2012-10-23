@@ -56,7 +56,7 @@
 	
 	Entry* vincensdStarbucks::getNearest(double x, double y) {
 		
-		Entry* e;
+		Entry* e=NULL;
 		
 		/**	
 		for (int i = 0; i < the_list.size(); i=i+3)	// iterate thru vector

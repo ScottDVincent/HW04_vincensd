@@ -67,9 +67,9 @@ void HW04_vincensdApp::setup()
 	/** Read .csv file into a vector */
 
 		//Open file
-	ifstream infile ("..\resources\Starbucks_2006.csv");			// pg589 create an an input stream
+	ifstream infile ("..\\resources\\Starbucks_2006.csv");			// pg589 create an an input stream
 	if (infile.fail()){ 
-		printf("Error opening file %s\n", "Starbucks_2006.csv"); 
+		cout << "Error opening file" << endl;// %s\n", "Starbucks_2006.csv"); 
 	}
 
 	string line;
@@ -79,7 +79,7 @@ void HW04_vincensdApp::setup()
 	//Fill the vector with entry data
 	while ( !infile.eof() ) {
 		     
-		Entry* e = new Entry();
+		Entry e;
 /**
 		infile.getline(next, 256, ',');
 		string s(next);
@@ -91,7 +91,7 @@ void HW04_vincensdApp::setup()
 		infile.getline(next, 256, '\n');
 		e->y = 0.0;//next; //parse next as a double
 
-		entryVec.push_back(*e);
+		
 	}
 }
 */
@@ -100,19 +100,28 @@ void HW04_vincensdApp::setup()
 
 
 				
-			     stringstream strstr(line);    	// create a strstr of stringstream type for manipulation
+			     //stringstream strstr(line);    	// create a strstr of stringstream type for manipulation
 				// char word[256];// = new char[256];
 
-				 getline(infile, line, ',') >> e.identifier;
+				 getline(infile, line, ',');
+				 e.identifier = line;
+
+				 infile.get();
+				 infile >> e.x;
+
+				 infile.get();
+				 infile >> e.y;
+
 				//stringstream strstr(line);
 				// strstr.getline(strstr, word, ',') >> e.identifier;
-				 strstr.get();
-				 strstr >> e.x;
+				 //strstr.get();
+				 //strstr >> e -> x;
 				 //double d;
 				 //strstr >> d;
-				 strstr.get();
-				 strstr >> e.y;
-				 
+				 //strstr.get();
+				 //strstr >> e -> y;
+
+				 entryVec.push_back(e);
 	}
 			   			// split the string and add pieces onto back of vector
 		  
@@ -160,7 +169,7 @@ void HW04_vincensdApp::setup()
 		*/
 
 
-//}
+}
 
 void HW04_vincensdApp::mouseDown( MouseEvent event )
 {
