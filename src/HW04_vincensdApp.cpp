@@ -61,7 +61,7 @@ void HW04_vincensdApp::setup()
 {
 
 	/** setup vars */
-	Entry* e;
+	//Entry* e;
 	vector<Entry> entryVec;
 		
 	/** Read .csv file into a vector */
@@ -69,12 +69,12 @@ void HW04_vincensdApp::setup()
 		//Open file
 	ifstream infile ("..\\resources\\Starbucks_2006.csv");			// pg589 create an an input stream
 	if (infile.fail()){ 
-		cout << "Error opening file" << endl;// %s\n", "Starbucks_2006.csv"); 
+		cout << "Error opening file" << endl;						// %s\n", "Starbucks_2006.csv"); 
 	}
 
 	string line;
 	
-	char next[256];
+	//char next[256];
 
 	//Fill the vector with entry data
 	while ( !infile.eof() ) {
@@ -125,7 +125,7 @@ void HW04_vincensdApp::setup()
 	}
 			   			// split the string and add pieces onto back of vector
 		  
-			
+		cout << "End reading file" << endl;		
 
 		//Test Some Data to output our results
 		// input something // cin >>
